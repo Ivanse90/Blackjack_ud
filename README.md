@@ -16,12 +16,12 @@
 
 <h2>Historias de usuario</h2>
 <ol> 
-<li><b>Como</b> repartidor <b>quiero</b> entregar dos cartas al jugador, una de esas oculta para mi <b>para</b> dar inicio a la partida.</li>
-<li><b>Como</b> repartidor <b>quiero</b> tomar dos cartas, una de ellas oculta para el jugador <b>para</b> dar inicio a la partida.</li>
-<li><b>Como</b> jugador <b>quiero</b> recibir dos cartas del repartidor, que sean visibles solo para mi <b>para</b> que él no vea mi juego completo.</li>
-<li><b>Como</b> jugador <b>quiero</b> solicitar una carta visible para todos <b>para</b> sumar a mi puntaje.</li>
-<li><b>Como</b> jugador <b>quiero</b> obtener la suma de los valores de una mano <b>para</b> saber el valor total.</li>
-<li><b>Como</b> jugador <b>quiero</b> plantar el juego <b>para</b> no exceder el valor de 21 con la sumatoria de cartas.</li>
-<li><b>Como</b> repartidor <b>quiero</b> definir quién ganó por mayoría de puntaje <b>para</b> finalizar el juego.</li>
-<li><b>Como</b> repartidor <b>quiero</b> definir quién ganó en caso de empate <b>para</b> finalizar el juego.</li>
+  <li><b>Como</b> <i>repartidor</i> <b>quiero</b> entregar dos cartas al <i>jugador</i>, una de esas oculta para mi <b>para</b> dar inicio a la partida.</li>
+<li><b>Como</b> <i>repartidor</i> <b>quiero</b> tomar dos cartas, una de ellas oculta para el <i>jugador</i> <b>para</b> dar inicio a la partida.</li>
+<li><b>Como</b> <i>jugador</i> <b>quiero</b> recibir dos cartas del <i>repartidor</i>, que sean visibles solo para mi <b>para</b> que él no vea mi juego completo.</li>
+<li><b>Como</b> <i>jugador</i> <b>quiero</b> solicitar una carta visible para todos <b>para</b> sumar a mi puntaje.</li>
+<li><b>Como</b> <i>jugador</i> <b>quiero</b> obtener la suma de los valores de una mano <b>para</b> saber el valor total.</li>
+<li><b>Como</b> <i>jugador</i> <b>quiero</b> plantar el juego <b>para</b> no exceder el valor de 21 con la sumatoria de cartas.</li>
+<li><b>Como</b> <i>repartidor</i> <b>quiero</b> definir quién ganó por mayoría de puntaje <b>para</b> finalizar el juego.</li>
+<li><b>Como</b> <i>repartidor</i> <b>quiero</b> definir quién ganó en caso de empate <b>para</b> finalizar el juego.</li>
 </ol>
