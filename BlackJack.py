@@ -60,33 +60,8 @@ class Hand:
             self.value -= 10
             self.aces -= 1
             
-#creating Chips balance for comeptitor#            
+          
 
-class Chips:
-    
-    def __init__(self):
-        self.total = 100  # This can be set to a default value or supplied by a user input
-        self.bet = 0
-        
-    def win_bet(self):
-        self.total += self.bet
-    
-    def lose_bet(self):
-        self.total -+ self.bet
-        
-#Taking bets#
-
-def take_bet(chips):
-    while True:
-        try:
-            chips.bet = int(input('cuantas ficahs te gustaria apostar?  '))
-        except ValueError:
-            print("Lo siento, su apuesta tiene que ser un numero!")
-        else:
-            if chips.bet > chips.total:
-                print('Lo siento, su apuesta no puede exceder {} '.format(chips.total))
-            else:
-                break      
 
 # taking hits#
 
@@ -116,44 +91,39 @@ def hit_or_stand(deck,hand):
 
 #functions to display cards#
 
-def show_some(player,dealer,chips):
+def show_some(player,dealer):
     print("\nLa mano del repartidor")
     print("<carta oculta>")
     print(' ', dealer.cards[1])
     print("\nLa mano del jugador: ", *player.cards, sep= '\n')
     print("El jugador Tiene = ", player.value)
-    print("El jugador tiene chips = ", chips.total)
+
     
     
-def show_all(player,dealer,chips):
+def show_all(player,dealer):
     print("\nLa mano del repartidor:", *dealer.cards, sep="\n")
     print("La mano del repartidor =",dealer.value)
     print("\nLa mano del jugador: ", *player.cards, sep= '\n')
     print("La mano del jugador = ", player.value)
-    print("El jugador tiene chips = ", chips.total)
+
     
 
 #functions to handle game scenarios#
 
-def player_busts(player,dealer,chips):
+def player_busts(player,dealer):
     print("Lo siento. Te pasaste. Perdiste.\n")
-    chips.lose_bet()
 
-def player_wins(player,dealer,chips):
+def player_wins(player,dealer):
     print("Felicitaciones. Ganaste\n!")
-    chips.win_bet()
 
-def dealer_busts(player,dealer,chips):
+def dealer_busts(player,dealer):
     print("El repartidor se paso. Tu ganas!\n")
-    chips.win_bet()
     
-def dealer_wins(player,dealer,chips):
+def dealer_wins(player,dealer):
     print("Lo siento, perdiste. El repartidor gano!")
-    chips.lose_bet()
     
-def push(player,dealer,chips):
+def push(player,dealer):
     print("Lo siento, empataron. El repartidor gano!") 
-    chips.lose_bet()   
 
 #NOW FOR THE GAME
 while True:
@@ -172,14 +142,11 @@ while True:
     dealer_hand.add_card(deck.deal())
     dealer_hand.add_card(deck.deal())
     
-    # Set up the Player's chips
-    player_chips = Chips()
-        
-    # Prompt the Player for their bet
-    take_bet(player_chips)
+
+    
     
     # Show cards (but keep one dealer card hidden)
-    show_some(player_hand, dealer_hand,player_chips)
+    show_some(player_hand, dealer_hand)
     
     while playing:  # recall this variable from our hit_or_stand function
         
@@ -187,11 +154,11 @@ while True:
         hit_or_stand(deck, player_hand)
         
         # Show cards (but keep one dealer card hidden)
-        show_some(player_hand,dealer_hand,player_chips) 
+        show_some(player_hand,dealer_hand) 
         
         # If player's hand exceeds 21, run player_busts() and break out of loop
         if player_hand.value >21:
-            player_busts(player_hand, dealer_hand, player_chips)
+            player_busts(player_hand, dealer_hand)
 
             break
 
@@ -202,24 +169,23 @@ while True:
             hit(deck, dealer_hand)
     
         # Show all cards
-        show_all(player_hand,dealer_hand,player_chips)
+        show_all(player_hand,dealer_hand)
         
         # Run different winning scenarios
         if dealer_hand.value > 21:
-            dealer_busts(player_hand,dealer_hand,player_chips)
+            dealer_busts(player_hand,dealer_hand)
 
         elif dealer_hand.value > player_hand.value:
-            dealer_wins(player_hand,dealer_hand,player_chips)
+            dealer_wins(player_hand,dealer_hand)
 
         elif dealer_hand.value < player_hand.value:
-            player_wins(player_hand,dealer_hand,player_chips)
+            player_wins(player_hand,dealer_hand)
 
         else:
-            push(player_hand,dealer_hand,player_chips) # Si quedan emptados
+            push(player_hand,dealer_hand) # Si quedan emptados
         
     
-    # Inform Player of their chips total
-    print("\nLas ganancias de las jugadoras están en", player_chips.total)
+
     
     # Ask to play again
     new_game = input("Quieres jugar de nuevo? Ingrese 's' or 'n'")
