@@ -52,6 +52,14 @@
 <br><b>When</b> the player requested the last card </br>
 <br><b>Then</b> the player lose </br>
 
+<li><b>Criterio de Aceptación 3</b></li>
+
+<br><b>Dado</b> xxxxxxxxxxque el jugador desea iniciar una partida </br>
+<br><b>Cuando</b> xxxxxxxxxxxxel jugador y el repartidor obtengan dos cartas  cada uno  </br>
+<br><b>Entonces</b> xxxxxxxxxxxxxxxuna de las cartas del repartidor debe ser visible para el jugador </br>
+
+
+
 <li><b>Resultado de Criterios de Aceptación</b></li>
 <p>Para Verificar cada uno de los criterios de aceptacion desarrollados mencionados anteriormente, se ejecuta behave donde indica el resutlado de cada unoa de estas preubas:</p>
 
@@ -117,3 +125,21 @@ Feature: History 2 # giveCard.feature:1
 Took 0m0.012s
 PS D:\BlackJack\Blackjack_ud\features> 
 </p>
+
+
+<h2>Actividades Planeadas</h2>
+<ol> 
+ <li>Generación de inventario de cartas mediante un arreglo con la cantidad de cartas participantes con sus diferentes pintas.</li>
+ <li>Crear arreglo para el participante</li>
+<li>Seleccionar dos (2) elementos aleatorios del arreglo inventario.</li>
+<li>Agregar al arreglo los dos (2) elementos aleatorios del  participante y eliminarlo del arreglo inventario.</li>
+<li>Seleccionar un (1) elemento aleatorio del arreglo inventario, agregarlo al arreglo del participante y eliminarlo del arreglo inventario</li>
+<li>Agregar al arreglo un (1) elemento aleatorio del  particpante y eliminarlo del arreglo inventario.</li>
+<li>Sumar los valores de los elementos del arreglo</li>
+<li>Verificar que la puntuación del participante sea menor  o igual que 21</li>
+<li>Imprimir la puntuación actual del participante del modo “You have A,B,C for a total of XXX”</li>
+<li>Verificar que la puntuación del participante cumpla con las condiciones del juego</li>
+<li>Comparar la sumatoria de los arreglos de los participantes</li>
+<li>Imprimir quien es el ganador de la partida </li>
+</ol> 
+
