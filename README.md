@@ -86,7 +86,129 @@ test_blakjack.py::test_deck_sh[32-32] PASSED [ 75%]<br>
 test_blakjack.py::test_deck_sh[51-51] PASSED [100%]<br>
 <br>
 ================================== <b>4 passed in 0.05s</b> ==================================
+<li><b>Prueba de clase <i>Deck()</i> función deal</b></li>
+<br>
+<p>La función deal se encarga eliminar  las cartas de la baraja que se asignan al jugador, para esta prueba se comprobara que luego de hacer n llamados a la función la baraja tendrá 52 elementos menos los n llamados de la función:</p>
 
+test_blakjack.py::test_deck_dl[0-52] PASSED [ 16%]<br>
+test_blakjack.py::test_deck_dl[1-51] PASSED [ 33%]<br>
+test_blakjack.py::test_deck_dl[52-0] PASSED [ 50%]<br>
+test_blakjack.py::test_deck_dl[51-1] PASSED [ 66%]<br>
+test_blakjack.py::test_deck_dl[11-41] PASSED [ 83%]<br>
+test_blakjack.py::test_deck_dl[37-15] PASSED [100%]<br>
+<br>
+================================== <b>6 passed in 0.07s</b> ==================================
+<li><b>Prueba de clase <i>Hand()</i> función add_card</b></li>
+<br>
+<p>La función add_card se encarga de agregar a la mano del jugador una carta seleccionada, con esto si se asignan tres cartas se espera que la longitud del arreglo que hacer referencia a la mano del jugador será igual a tres:</p>
+
+test_blakjack.py::test_hand_add[0-0] PASSED [ 25%]<br>
+test_blakjack.py::test_hand_add[1-1] PASSED [ 50%]<br>
+test_blakjack.py::test_hand_add[2-2] PASSED [ 75%]<br>
+test_blakjack.py::test_hand_add[3-3] PASSED [100%]<br>
+<br>
+================================== <b>4 passed in 0.05s</b> ==================================
+<li><b>Prueba de clase <i>Hand()</i> función adjust_for_ace</b></li>
+<br>
+<p>La función adjust_for_ace hace un ajuste en la puntuación de As, la cual cuando se escoge un As el primero puntuara por 11 puntos los As adicional que salgan para la baraja del jugador tendrán una puntuación de 1 punto:</p>
+
+test_blakjack.py::test_hand_adj[1-11] PASSED [ 16%]<br>
+test_blakjack.py::test_hand_adj[2-12] PASSED [ 33%]<br>
+test_blakjack.py::test_hand_adj[3-13] PASSED [ 50%]<br>
+test_blakjack.py::test_hand_adj[4-14] PASSED [ 66%]<br>
+test_blakjack.py::test_hand_adj[5-15] PASSED [ 83%]<br>
+test_blakjack.py::test_hand_adj[0-0] PASSED [100%]<br>
+<br>
+================================== <b>6 passed in 0.06s</b> ==================================
+<li><b>Prueba para la función <i>show_some()</i></b></li>
+<br>
+<p>Teniendo en cuenta que esta función imprime textos, se comprueba retornando el string  "Jugando!", se comprueba evidenciando el mismo texto:</p>
+
+test_blakjack.py::test_show_some PASSED [100%]<br>
+<br>
+================================== <b>1 passed in 0.05s</b> ==================================
+<li><b>Prueba para la función <i>show_all()</i></b></li>
+<br>
+<p>Teniendo en cuenta que esta función imprime textos, se comprueba retornando el string  "****", se comprueba evidenciando el mismo texto:</p>
+
+test_blakjack.py::test_show_some PASSED [100%]<br>
+<br>
+================================== <b>1 passed in 0.02s</b> ==================================
+<li><b>Prueba para la función <i>player_busts()</i></b></li>
+<br>
+<p>La función payer_busts se encarga de retornar el string “Lo siento. Te pasaste. Perdiste”, se comprueba evidenciando el mismo texto:</p>
+
+test_blakjack.py::test_player_busts PASSED [100%]<br>
+<br>
+================================== <b>1 passed in 0.04s</b> ==================================	
+<li><b>Prueba para la función <i>player_wins()</i></b></li>
+<br>
+<p>La función payer_wins se encarga de retornar el string “Felicitaciones. Ganaste”, se comprueba evidenciando el mismo texto:</p>
+
+test_blakjack.py::test_player_wins PASSED [100%]<br>
+<br>
+================================== <b>1 passed in 0.04s</b> ==================================
+<li><b>Prueba para la función <i>dealer_busts()</i></b></li>
+<br>
+<p>La función dealer_busts se encarga de retornar el string “El repartidor se paso. Tu ganas!”, se comprueba evidenciando el mismo texto:</p>
+
+test_blakjack.py::test_dealer_busts PASSED [100%]<br>
+<br>
+================================== <b>1 passed in 0.03s</b> ==================================
+<li><b>Prueba para la función <i>dealer_wins()</i></b></li>
+<br>
+<p>La función dealer_wins se encarga de retornar el string “Lo siento, ¡perdiste el repartido gano!”, se comprueba evidenciando el mismo texto:</p>
+
+test_blakjack.py::test_dealer_wins PASSED [100%]<br>
+<br>
+================================== <b>1 passed in 0.04s</b> ==================================
+<li><b>Prueba para la función <i>push()</i></b></li>
+<br>
+<p>La función push se encarga de retornar el string “Lo siento, empataron. El repartdos gano!”, se comprueba evidenciando el mismo texto:</p>
+
+test_blakjack.py::test_push PASSED [100%]<br>
+<br>
+================================== <b>1 passed in 0.04s</b> ==================================
+<li><b>Pruebas unitarias completas</b></li>
+<br>collected 35 items<br>
+<br>
+test_blakjack.py::test_card[Dos-Corazones-Dos de Corazones] PASSED [  2%]<br>
+test_blakjack.py::test_card[Tres-Diamantes-Tres de Diamantes] PASSED [  5%]<br>
+test_blakjack.py::test_card[Queen-Picas-Queen de Picas] PASSED [  8%]<br>
+test_blakjack.py::test_card[As-Treboles-As de Treboles] PASSED [ 11%]<br>
+test_blakjack.py::test_deck[2-2] PASSED [ 14%]<br>
+test_blakjack.py::test_deck[7-7] PASSED [ 17%] <br>
+test_blakjack.py::test_deck[8-8] PASSED [ 20%] <br>
+test_blakjack.py::test_deck[12-12] PASSED [ 22%] <br>
+test_blakjack.py::test_deck_sh[0-0] PASSED [ 25%] <br>
+test_blakjack.py::test_deck_sh[15-15] PASSED [ 28%]<br>
+test_blakjack.py::test_deck_sh[32-32] PASSED [ 31%] <br>
+test_blakjack.py::test_deck_sh[51-51] PASSED [ 34%] <br>
+test_blakjack.py::test_deck_dl[0-52] PASSED [ 37%] <br>
+test_blakjack.py::test_deck_dl[1-51] PASSED [ 40%]<br>
+test_blakjack.py::test_deck_dl[52-0] PASSED [ 42%] <br>
+test_blakjack.py::test_deck_dl[51-1] PASSED [ 45%] <br>
+test_blakjack.py::test_deck_dl[11-41] PASSED [ 48%] <br>
+test_blakjack.py::test_deck_dl[37-15] PASSED [ 51%]<br>
+test_blakjack.py::test_hand_add[0-0] PASSED [ 54%] <br>
+test_blakjack.py::test_hand_add[1-1] PASSED [ 57%] <br>
+test_blakjack.py::test_hand_add[2-2] PASSED [ 60%]<br>
+test_blakjack.py::test_hand_add[3-3] PASSED [ 62%] <br>
+test_blakjack.py::test_hand_adj[1-11] PASSED [ 65%] <br>
+test_blakjack.py::test_hand_adj[2-12] PASSED [ 68%]<br>
+test_blakjack.py::test_hand_adj[3-13] PASSED [ 71%] <br>
+test_blakjack.py::test_hand_adj[4-14] PASSED [ 74%] <br>
+test_blakjack.py::test_hand_adj[5-15] PASSED [ 77%] <br>
+test_blakjack.py::test_hand_adj[0-0] PASSED [ 80%] <br>
+test_blakjack.py::test_show_some PASSED [ 82%] <br>
+test_blakjack.py::test_show_all PASSED [ 85%] <br>
+test_blakjack.py::test_player_busts PASSED [ 88%] <br>
+test_blakjack.py::test_player_wins PASSED [ 91%] <br>
+test_blakjack.py::test_dealer_busts PASSED [ 94%] <br>
+test_blakjack.py::test_dealer_wins PASSED [ 97%] <br>
+test_blakjack.py::test_push PASSED [100%]<br>
+<br>	
+================================= <b>35 passed in 0.23s</b> ==================================
 </ol>
 
 <h2>Pruebas de aceptación</h2>
