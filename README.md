@@ -57,144 +57,236 @@
 
 <h2>Pruebas de aceptación</h2>
 <p>Para Verificar cada uno de los criterios de aceptacion mencionados anteriormente, se ejecuta <i>behave</i> donde indica el resultado de cada una de estas pruebas:</p>
-<p><b>Feature:</b> BlackJack # decktoplayer.feature:1<p>
+
+<b>Scenario Outline:</b> Supply two cards and validate the value of the hidden card<br>
+<br>
+<b>Given</b> the player wants to begin a game, the dealer and the player will take <values> cards<br>
+<b>When</b> the dealer gets two cards<br>
+<b>Then</b> a of these deck should <visible> to the player<br>
+	
+<b>Examples:</b> values<br>
+<TABLE FRAME="hsides" RULES="none">
+<TR>
+	<TD>values</TD> <TD>visible</TD>
+</TR>
+<TR>
+	<TD>2,2</TD> <TD>visible</TD>
+</TR>
+<TR>
+	<TD>0,2 </TD> <TD>visible</TD>
+</TR>
+<TR>
+	<TD>1,2</TD> <TD>visible</TD>
+</TR>
+<TR>
+	<TD>2,1</TD> <TD>Not visible></TD>
+</TR>
+<TR>
+	<TD>1,0</TD> <TD>Not visible</TD>
+</TR>
+<TR>
+	<TD>0,0</TD> <TD>Not visible</TD>
+</TR>
+</TABLE>
+
+	
+<b>Feature:</b> BlackJack # decktoplayer.feature:1
 
 <TABLE FRAME="hsides" RULES="none">
-	<TR>
-		<TD> Scenario Outline: Supply two cards and validate the value of the hidden card -- @1.1 values</TD> <TD># decktoplayer.feature:10</TD>
-	</TR>
-	<TR>
-		<TD>Given the player wants to begin a game, the dealer and the player will take 2,2 cards</TD> <TD># steps/decktoplayer.py:5</TD>
-	</TR>
-  <TR>
-		<TD>When the dealer gets two cards</TD> <TD>steps/decktoplayer.py:12</TD>
-	</TR>
-  <TR>
-		<TD>Then a of these deck should visible to the player </TD> <TD># steps/decktoplayer.py:22</TD>
-	</TR>
+<TR>
+	<TD> Scenario Outline: Supply two cards and validate the value of the hidden card -- @1.1 values</TD> <TD># decktoplayer.feature:10</TD>
+</TR>
+<TR>
+	<TD>Given the player wants to begin a game, the dealer and the player will take 2,2 cards</TD> <TD># steps/decktoplayer.py:5</TD>
+</TR>
+<TR>
+	<TD>When the dealer gets two cards</TD> <TD>steps/decktoplayer.py:12</TD>
+</TR>
+<TR>
+	<TD>Then a of these deck should visible to the player </TD> <TD># steps/decktoplayer.py:22</TD>
+</TR>
 </TABLE>
 
 <TABLE FRAME="hsides" RULES="none">
-	<TR>
-		<TD>Scenario Outline: Supply two cards and validate the value of the hidden card -- @1.2 values</TD> <TD># decktoplayer.feature:11</TD>
-	</TR>
-	<TR>
-		<TD>Given the player wants to begin a game, the dealer and the player will take 0,2 cards</TD> <TD># steps/decktoplayer.py:5</TD>
-	</TR>
-  <TR>
-		<TD>When the dealer gets two cards</TD> <TD># steps/decktoplayer.py:12</TD>
-	</TR>
-  <TR>
-		<TD>Then a of these deck should visible to the player</TD> <TD># steps/decktoplayer.py:22</TD>
-	</TR>
+<TR>
+	<TD>Scenario Outline: Supply two cards and validate the value of the hidden card -- @1.2 values</TD> <TD># decktoplayer.feature:11</TD>
+</TR>
+<TR>
+	<TD>Given the player wants to begin a game, the dealer and the player will take 0,2 cards</TD> <TD># steps/decktoplayer.py:5</TD>
+</TR>
+<TR>
+	<TD>When the dealer gets two cards</TD> <TD># steps/decktoplayer.py:12</TD>
+</TR>
+<TR>
+	<TD>Then a of these deck should visible to the player</TD> <TD># steps/decktoplayer.py:22</TD>
+</TR>
 </TABLE>
   
 <TABLE FRAME="hsides" RULES="none">
-	<TR>
-		<TD>Scenario Outline: Supply two cards and validate the value of the hidden card -- @1.3 values</TD> <TD># decktoplayer.feature:12</TD>
-	</TR>
-	<TR>
-		<TD>Given the player wants to begin a game, the dealer and the player will take 1,2 cards</TD> <TD># steps/decktoplayer.py:5</TD>
-	</TR>
-  <TR>
-		<TD>When the dealer gets two cards</TD> <TD># steps/decktoplayer.py:12</TD>
-	</TR>
-  <TR>
-		<TD>Then a of these deck should visible to the player</TD> <TD># steps/decktoplayer.py:22</TD>
-	</TR>
+<TR>
+	<TD>Scenario Outline: Supply two cards and validate the value of the hidden card -- @1.3 values</TD> <TD># decktoplayer.feature:12</TD>
+</TR>
+<TR>
+	<TD>Given the player wants to begin a game, the dealer and the player will take 1,2 cards</TD> <TD># steps/decktoplayer.py:5</TD>
+</TR>
+<TR>
+	<TD>When the dealer gets two cards</TD> <TD># steps/decktoplayer.py:12</TD>
+</TR>
+<TR>
+	<TD>Then a of these deck should visible to the player</TD> <TD># steps/decktoplayer.py:22</TD>
+</TR>
 </TABLE>
     
 <TABLE FRAME="hsides" RULES="none">
-	<TR>
-		<TD>Scenario Outline: Supply two cards and validate the value of the hidden card -- @1.4 values</TD> <TD># decktoplayer.feature:13</TD>
-	</TR>
-	<TR>
-		<TD>Given the player wants to begin a game, the dealer and the player will take 2,1 cards</TD> <TD># steps/decktoplayer.py:5</TD>
-	</TR>
-  <TR>
-		<TD>When the dealer gets two cards</TD> <TD># steps/decktoplayer.py:12</TD>
-	</TR>
-  <TR>
-		<TD>Then a of these deck should Not visible to the player</TD> <TD># steps/decktoplayer.py:22</TD>
-	</TR>
+<TR>
+	<TD>Scenario Outline: Supply two cards and validate the value of the hidden card -- @1.4 values</TD> <TD># decktoplayer.feature:13</TD>
+</TR>
+<TR>
+	<TD>Given the player wants to begin a game, the dealer and the player will take 2,1 cards</TD> <TD># steps/decktoplayer.py:5</TD>
+</TR>
+<TR>
+	<TD>When the dealer gets two cards</TD> <TD># steps/decktoplayer.py:12</TD>
+</TR>
+<TR>
+	<TD>Then a of these deck should Not visible to the player</TD> <TD># steps/decktoplayer.py:22</TD>
+</TR>
 </TABLE>
   
 <TABLE FRAME="hsides" RULES="none">
-	<TR>
-		<TD>Scenario Outline: Supply two cards and validate the value of the hidden card -- @1.5 values</TD> <TD># decktoplayer.feature:14</TD>
-	</TR>
-	<TR>
-		<TD>Given the player wants to begin a game, the dealer and the player will take 1,0 cards</TD> <TD># steps/decktoplayer.py:5</TD>
-	</TR>
-  <TR>
-		<TD>When the dealer gets two cards</TD> <TD># steps/decktoplayer.py:12</TD>
-	</TR>
-  <TR>
-		<TD>Then a of these deck should Not visible to the player</TD> <TD># steps/decktoplayer.py:22</TD>
-	</TR>
+<TR>
+	<TD>Scenario Outline: Supply two cards and validate the value of the hidden card -- @1.5 values</TD> <TD># decktoplayer.feature:14</TD>
+</TR>
+<TR>
+	<TD>Given the player wants to begin a game, the dealer and the player will take 1,0 cards</TD> <TD># steps/decktoplayer.py:5</TD>
+</TR>
+<TR>
+	<TD>When the dealer gets two cards</TD> <TD># steps/decktoplayer.py:12</TD>
+</TR>
+<TR>
+	<TD>Then a of these deck should Not visible to the player</TD> <TD># steps/decktoplayer.py:22</TD>
+</TR>
 </TABLE>
-    
+      
 <TABLE FRAME="hsides" RULES="none">
-	<TR>
-		<TD></TD> <TD></TD>
-	</TR>
-	<TR>
-		<TD></TD> <TD></TD>
-	</TR>
-  <TR>
-		<TD></TD> <TD></TD>
-	</TR>
-  <TR>
-		<TD></TD> <TD></TD>
-	</TR>
+<TR>
+	<TD>Scenario Outline: Supply two cards and validate the value of the hidden card -- @1.6 values</TD> <TD># decktoplayer.feature:15</TD>
+</TR>
+<TR>
+	<TD>Given the player wants to begin a game, the dealer and the player will take 0,0 cards</TD> <TD># steps/decktoplayer.py:5</TD>
+</TR>
+<TR>
+	<TD>When the dealer gets two cards</TD> <TD># steps/decktoplayer.py:12</TD>
+</TR>
+<TR>
+	<TD>Then a of these deck should Not visible to the player</TD> <TD># steps/decktoplayer.py:22</TD>
+</TR>
 </TABLE>
-    
+	
+<b>Scenario Outline:</b> As a dealer I want to define who won the game<br>
+<br>
+<b>Given</b> the sum of the players cards is less or more <value><br>
+<b>When</b> the player requested the last card<br>
+<b>Then</b> the player <statusplayer><br>
+	
+<b>Examples:</b> values<br>
 <TABLE FRAME="hsides" RULES="none">
-	<TR>
-		<TD>Scenario Outline: Supply two cards and validate the value of the hidden card -- @1.6 values</TD> <TD># decktoplayer.feature:15</TD>
-	</TR>
-	<TR>
-		<TD>Given the player wants to begin a game, the dealer and the player will take 0,0 cards</TD> <TD># steps/decktoplayer.py:5</TD>
-	</TR>
-  <TR>
-		<TD>When the dealer gets two cards</TD> <TD># steps/decktoplayer.py:12</TD>
-	</TR>
-  <TR>
-		<TD>Then a of these deck should Not visible to the player</TD> <TD># steps/decktoplayer.py:22</TD>
-	</TR>
+<TR>
+	<TD>values</TD> <TD>statusplayer</TD>
+</TR>
+<TR>
+	<TD>22</TD> <TD>lose</TD>
+</TR>
+<TR>
+	<TD>23</TD> <TD>lose</TD>
+</TR>
+<TR>
+	<TD>19</TD> <TD>next step</TD>
+</TR>
+<TR>
+	<TD>21</TD> <TD>win</TD>
+</TR>
 </TABLE>
-<p> 
+
                          
+<b>Feature:</b> BlackJack # giveCard.feature:1
 
-Feature: BlackJack # giveCard.feature:1
+<TABLE FRAME="hsides" RULES="none">
+<TR>
+	<TD>Scenario Outline: As a dealer I want to define who won the game -- @1.1 values</TD> <TD># giveCard.feature:9</TD>
+</TR>
+<TR>
+	<TD>Given the sum of the players cards is less or more 22</TD> <TD># steps/giveCard.py:5</TD>
+</TR>
+<TR>
+	<TD>When the player requested the last card</TD> <TD># steps/giveCard.py:13</TD>
+</TR>
+<TR>
+	<TD>Then the player lose</TD> <TD># steps/giveCard.py:24</TD>
+</TR>
+</TABLE>                                      
 
-  Scenario Outline: As a dealer I want to define who won the game -- @1.1 values  # giveCard.feature:9
-    Given the sum of the players cards is less or more 22                         # steps/giveCard.py:5
-    When the player requested the last card                                       # steps/giveCard.py:13
-    Then the player lose                                                          # steps/giveCard.py:24
+<TABLE FRAME="hsides" RULES="none">
+<TR>
+	<TD>Scenario Outline: As a dealer I want to define who won the game -- @1.2 values</TD> <TD># giveCard.feature:10</TD>
+</TR>
+<TR>
+	<TD>Given the sum of the players cards is less or more 23</TD> <TD># steps/giveCard.py:5</TD>
+</TR>
+<TR>
+	<TD>When the player requested the last card</TD> <TD># steps/giveCard.py:13</TD>
+</TR>
+<TR>
+	<TD>Then the player lose</TD> <TD># steps/giveCard.py:24</TD>
+</TR>
+</TABLE>                                      
+                                                              
+<TABLE FRAME="hsides" RULES="none">
+<TR>
+	<TD>Scenario Outline: As a dealer I want to define who won the game -- @1.3 values</TD> <TD># giveCard.feature:11</TD>
+</TR>
+<TR>
+	<TD>Given the sum of the players cards is less or more 19</TD> <TD># steps/giveCard.py:5</TD>
+</TR>
+<TR>
+	<TD>When the player requested the last card</TD> <TD># steps/giveCard.py:13</TD>
+</TR>
+<TR>
+	<TD>Then the player next step</TD> <TD># steps/giveCard.py:24</TD>
+</TR>
+</TABLE>                                    
+                                                         
+<TABLE FRAME="hsides" RULES="none">
+<TR>
+	<TD>Scenario Outline: As a dealer I want to define who won the game -- @1.4 values</TD> <TD># giveCard.feature:12</TD>
+</TR>
+<TR>
+	<TD>Given the sum of the players cards is less or more 21</TD> <TD># steps/giveCard.py:5</TD>
+</TR>
+<TR>
+	<TD>When the player requested the last card</TD> <TD># steps/giveCard.py:13</TD>
+</TR>
+<TR>
+	<TD>Then the player win</TD> <TD># steps/giveCard.py:24</TD>
+</TR>
+</TABLE>
 
-  Scenario Outline: As a dealer I want to define who won the game -- @1.2 values  # giveCard.feature:10
-    Given the sum of the players cards is less or more 23                         # steps/giveCard.py:5
-    When the player requested the last card                                       # steps/giveCard.py:13
-    Then the player lose                                                          # steps/giveCard.py:24
-
-  Scenario Outline: As a dealer I want to define who won the game -- @1.3 values  # giveCard.feature:11
-    Given the sum of the players cards is less or more 19                         # steps/giveCard.py:5
-    When the player requested the last card                                       # steps/giveCard.py:13
-    Then the player next step                                                     # steps/giveCard.py:24
-
-  Scenario Outline: As a dealer I want to define who won the game -- @1.4 values  # giveCard.feature:12
-    Given the sum of the players cards is less or more 21                         # steps/giveCard.py:5
-    When the player requested the last card                                       # steps/giveCard.py:13
-    Then the player win                                                           # steps/giveCard.py:24
-
-2 features passed, 0 failed, 0 skipped
-10 scenarios passed, 0 failed, 0 skipped
-30 steps passed, 0 failed, 0 skipped, 0 undefined
-Took 0m0.012s
-PS D:\BlackJack\Blackjack_ud\features> 
-</p>
-
+<b>Results:</b>
+                             
+<TABLE FRAME="hsides" RULES="none">
+<TR>
+	<TD>2 features passed, 0 failed, 0 skipped</TD> 
+</TR>
+<TR>
+	<TD>10 scenarios passed, 0 failed, 0 skipped</TD>
+</TR>
+<TR>
+	<TD>30 steps passed, 0 failed, 0 skipped, 0 undefined</TD>
+</TR>
+<TR>
+	<TD>Took 0m0.012s</TD>
+</TR>
+</TABLE>                                          
+                                                               
 
 <h2>Actividades Planeadas</h2>
 <ol> 
