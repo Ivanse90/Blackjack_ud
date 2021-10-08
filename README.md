@@ -16,7 +16,7 @@
 
 <h2>Historias de usuario</h2>
 <ol> 
-  <li><b>Como</b> <i>repartidor</i> <b>quiero</b> entregar dos cartas al <i>jugador</i>, una de esas oculta para mi <b>para</b> dar inicio a la partida.</li>
+<li><b>Como</b> <i>repartidor</i> <b>quiero</b> entregar dos cartas al <i>jugador</i>, una de esas oculta para mi <b>para</b> dar inicio a la partida.</li>
 <li><b>Como</b> <i>repartidor</i> <b>quiero</b> tomar dos cartas, una de ellas oculta para el <i>jugador</i> <b>para</b> dar inicio a la partida.</li>
 <li><b>Como</b> <i>jugador</i> <b>quiero</b> recibir dos cartas del <i>repartidor</i>, que sean visibles solo para mi <b>para</b> que él no vea mi juego completo.</li>
 <li><b>Como</b> <i>jugador</i> <b>quiero</b> solicitar una carta visible para todos <b>para</b> sumar a mi puntaje.</li>
@@ -54,6 +54,40 @@
 </ol>
 
 <h2>Pruebas unitarias</h2>
+<ol>
+<li><b>Prueba de clase <i>Card()</i></b></li>
+<br>
+<p>La clase Card recibe como input dos parámetros string los cuales son una un valor de carta y un palo al recibir estos dos parámetros de entrada el output es un string que resulta ser la concatenación de ambos parámetros conectados con "de".</p>
+<p>Al realizar las pruebas unitarias con pytest se encuentra lo siguiente:</p>
+
+test_blakjack.py::test_card[Dos-Corazones-Dos de Corazones] PASSED [ 25%]<br>
+test_blakjack.py::test_card[Tres-Diamantes-Tres de Diamantes] PASSED [ 50%]<br>
+test_blakjack.py::test_card[Queen-Picas-Queen de Picas] PASSED [ 75%]<br>
+test_blakjack.py::test_card[As-Treboles-As de Treboles] PASSED [100%]<br>
+<br>
+================================== <b>4 passed in 0.05s</b> ==================================
+<li><b>Prueba de clase <i>Deck()</i></b></li>
+<br>
+<p>La clase Deck se encarga de mezclar la baraja que contiene todas las cartas y una vez solicite una carta esta se elimine de la baraja, con el fin de determinar si esta esta creando la baraja correctamente se comprueba si la posición de la carta de la baraja creada con la clase deck en el index n es igual  a la posición index n en la baraja creada manualmente, obteniendo los siguientes resultados:</p>
+
+test_blakjack.py::test_deck[2-2] PASSED [ 25%]<br>
+test_blakjack.py::test_deck[7-7] PASSED [ 50%]<br>
+test_blakjack.py::test_deck[8-8] PASSED [ 75%]<br>
+test_blakjack.py::test_deck[12-12] PASSED [100%]<br>
+<br>
+================================== <b>4 passed in 0.16s</b> ==================================
+<li><b>Prueba de clase <i>Deck()</i> función shuffle</b></li>
+<br>
+<p>La función shuffle se encarga de mezclar la baraja cambiando la posición inicial de cada carta perteneciente a la baraja, para esto se creo la baraja y se mezclo para luego comparar la posición inicial con la posición después de mezclar con lo cual tanto la posición inicial como la posición después de mezclar debe ser diferente:</p>
+
+test_blakjack.py::test_deck_sh[0-0] PASSED [ 25%]<br>
+test_blakjack.py::test_deck_sh[15-15] PASSED [ 50%]<br>
+test_blakjack.py::test_deck_sh[32-32] PASSED [ 75%]<br>
+test_blakjack.py::test_deck_sh[51-51] PASSED [100%]<br>
+<br>
+================================== <b>4 passed in 0.05s</b> ==================================
+
+</ol>
 
 <h2>Pruebas de aceptación</h2>
 <p>Para Verificar cada uno de los criterios de aceptacion mencionados anteriormente, se ejecuta <i>behave</i> donde indica el resultado de cada una de estas pruebas:</p>
