@@ -2,8 +2,8 @@
 <h1>JUEGO 21 -PYTHON</h1>
 <h2>Integrantes</h2>
 <ul>
-<li>Iván Andrés Serna cod: </li>
-<li>Omar Pedraza Romero cod: </li>
+<li>Iván Andrés Serna cod: 20211395007</li>
+<li>Omar Pedraza Romero cod: 20211495007</li>
 <li>Wilmer Jair Contreras Leguizamón cod: 20211495002</li>
 <li>Juan Camilo Castañeda cod: 20211495001</li>
 <li>Leidy Johanna Rodriguez cod: 20211495011</li>
@@ -26,78 +26,147 @@
 <li><b>Como</b> <i>repartidor</i> <b>quiero</b> definir quién ganó en caso de empate <b>para</b> finalizar el juego.</li>
 </ol>
 
+<h2>Criterios de aceptación</h2>
+<ol>
+<li><b><i>Al suministrar dos cartas validar el valor de la carta oculta</i></b></li>
+<br>
+<b>Dado</b> que el jugador desea iniciar una partida<br>
+<b>Cuando</b> el jugador y el repartidor obtengan dos cartas  cada uno<br>
+<b>Entonces</b> una de las cartas del repartidor debe ser visible para el jugador<br>
+<br>
 
-<h2>CRITERIOS DE ACEPTACIÓN</h2>
-
-<li><b>Criterio de Aceptación 1</b></li>
-
-<br><b>Dado</b> que el jugador desea iniciar una partida </br>
-<br><b>Cuando</b> el jugador y el repartidor obtengan dos cartas  cada uno  </br>
-<br><b>Entonces</b> una de las cartas del repartidor debe ser visible para el jugador </br>
-
-
-<br><b>Given</b> the player wish to start a game</br>
-<br><b>When</b> the player  and the dealer get 2 cards for each one</br>
-<br><b>Then</b> one of the cards of the dealer it is visible</br>
-
-
-<li><b>Criterio de Aceptación 2</b></li>
-
-<br><b>Dado</b> que la suma de las cartas del jugador es menor a 21 </br>
-<br><b>Cuando</b>  considere el jugador solicite una carta adicional al repartidor </br>
-<br><b>Entonces</b> elñ jugador pierde la partida </br>
+<b>Given</b> the player wish to start a game<br>
+<b>When</b> the player  and the dealer get 2 cards for each one<br>
+<b>Then</b> one of the cards of the dealer it is visible<br>
 
 
-<br><b>Given</b> the sum of the players cards is less or more 22</br>
-<br><b>When</b> the player requested the last card </br>
-<br><b>Then</b> the player lose </br>
+<li><b><i>Definir quién gana el juego</i></b></li>
+<br>
+<b>Dado</b> que la suma de las cartas del jugador es menor a 21 <br>
+<b>Cuando</b> lo considere el jugador, solicite una carta adicional al repartidor <br>
+<b>Entonces</b> si se pasa, el jugador pierde la partida<br>
+<br>
 
-<li><b>Criterio de Aceptación 3</b></li>
+<b>Given</b> the sum of the players cards is less or more 22<br>
+<b>When</b> the player requested the last card <br>
+<b>Then</b> if it is passed, the player lose the game<br>
 
-<br><b>Dado</b> xxxxxxxxxxque el jugador desea iniciar una partida </br>
-<br><b>Cuando</b> xxxxxxxxxxxxel jugador y el repartidor obtengan dos cartas  cada uno  </br>
-<br><b>Entonces</b> xxxxxxxxxxxxxxxuna de las cartas del repartidor debe ser visible para el jugador </br>
+</ol>
 
+<h2>Pruebas unitarias</h2>
 
+<h2>Pruebas de aceptación</h2>
+<p>Para Verificar cada uno de los criterios de aceptacion mencionados anteriormente, se ejecuta <i>behave</i> donde indica el resultado de cada una de estas pruebas:</p>
+<p><b>Feature:</b> BlackJack # decktoplayer.feature:1<p>
 
-<li><b>Resultado de Criterios de Aceptación</b></li>
-<p>Para Verificar cada uno de los criterios de aceptacion desarrollados mencionados anteriormente, se ejecuta behave donde indica el resutlado de cada unoa de estas preubas:</p>
+<TABLE FRAME="hsides" RULES="none">
+	<TR>
+		<TD> Scenario Outline: Supply two cards and validate the value of the hidden card -- @1.1 values</TD> <TD># decktoplayer.feature:10</TD>
+	</TR>
+	<TR>
+		<TD>Given the player wants to begin a game, the dealer and the player will take 2,2 cards</TD> <TD># steps/decktoplayer.py:5</TD>
+	</TR>
+  <TR>
+		<TD>When the dealer gets two cards</TD> <TD>steps/decktoplayer.py:12</TD>
+	</TR>
+  <TR>
+		<TD>Then a of these deck should visible to the player </TD> <TD># steps/decktoplayer.py:22</TD>
+	</TR>
+</TABLE>
 
+<TABLE FRAME="hsides" RULES="none">
+	<TR>
+		<TD>Scenario Outline: Supply two cards and validate the value of the hidden card -- @1.2 values</TD> <TD># decktoplayer.feature:11</TD>
+	</TR>
+	<TR>
+		<TD>Given the player wants to begin a game, the dealer and the player will take 0,2 cards</TD> <TD># steps/decktoplayer.py:5</TD>
+	</TR>
+  <TR>
+		<TD>When the dealer gets two cards</TD> <TD># steps/decktoplayer.py:12</TD>
+	</TR>
+  <TR>
+		<TD>Then a of these deck should visible to the player</TD> <TD># steps/decktoplayer.py:22</TD>
+	</TR>
+</TABLE>
+  
+<TABLE FRAME="hsides" RULES="none">
+	<TR>
+		<TD>Scenario Outline: Supply two cards and validate the value of the hidden card -- @1.3 values</TD> <TD># decktoplayer.feature:12</TD>
+	</TR>
+	<TR>
+		<TD>Given the player wants to begin a game, the dealer and the player will take 1,2 cards</TD> <TD># steps/decktoplayer.py:5</TD>
+	</TR>
+  <TR>
+		<TD>When the dealer gets two cards</TD> <TD># steps/decktoplayer.py:12</TD>
+	</TR>
+  <TR>
+		<TD>Then a of these deck should visible to the player</TD> <TD># steps/decktoplayer.py:22</TD>
+	</TR>
+</TABLE>
+    
+<TABLE FRAME="hsides" RULES="none">
+	<TR>
+		<TD>Scenario Outline: Supply two cards and validate the value of the hidden card -- @1.4 values</TD> <TD># decktoplayer.feature:13</TD>
+	</TR>
+	<TR>
+		<TD>Given the player wants to begin a game, the dealer and the player will take 2,1 cards</TD> <TD># steps/decktoplayer.py:5</TD>
+	</TR>
+  <TR>
+		<TD>When the dealer gets two cards</TD> <TD># steps/decktoplayer.py:12</TD>
+	</TR>
+  <TR>
+		<TD>Then a of these deck should Not visible to the player</TD> <TD># steps/decktoplayer.py:22</TD>
+	</TR>
+</TABLE>
+  
+<TABLE FRAME="hsides" RULES="none">
+	<TR>
+		<TD>Scenario Outline: Supply two cards and validate the value of the hidden card -- @1.5 values</TD> <TD># decktoplayer.feature:14</TD>
+	</TR>
+	<TR>
+		<TD>Given the player wants to begin a game, the dealer and the player will take 1,0 cards</TD> <TD># steps/decktoplayer.py:5</TD>
+	</TR>
+  <TR>
+		<TD>When the dealer gets two cards</TD> <TD># steps/decktoplayer.py:12</TD>
+	</TR>
+  <TR>
+		<TD>Then a of these deck should Not visible to the player</TD> <TD># steps/decktoplayer.py:22</TD>
+	</TR>
+</TABLE>
+    
+<TABLE FRAME="hsides" RULES="none">
+	<TR>
+		<TD></TD> <TD></TD>
+	</TR>
+	<TR>
+		<TD></TD> <TD></TD>
+	</TR>
+  <TR>
+		<TD></TD> <TD></TD>
+	</TR>
+  <TR>
+		<TD></TD> <TD></TD>
+	</TR>
+</TABLE>
+    
+<TABLE FRAME="hsides" RULES="none">
+	<TR>
+		<TD>Scenario Outline: Supply two cards and validate the value of the hidden card -- @1.6 values</TD> <TD># decktoplayer.feature:15</TD>
+	</TR>
+	<TR>
+		<TD>Given the player wants to begin a game, the dealer and the player will take 0,0 cards</TD> <TD># steps/decktoplayer.py:5</TD>
+	</TR>
+  <TR>
+		<TD>When the dealer gets two cards</TD> <TD># steps/decktoplayer.py:12</TD>
+	</TR>
+  <TR>
+		<TD>Then a of these deck should Not visible to the player</TD> <TD># steps/decktoplayer.py:22</TD>
+	</TR>
+</TABLE>
 <p> 
-PS D:\BlackJack\Blackjack_ud\features> behave
-Feature: BlackJack # decktoplayer.feature:1
+                         
 
-  Scenario Outline: Supply two cards and validate the value of the hidden card -- @1.1 values  # decktoplayer.feature:10 
-    Given the player wants to begin a game, the dealer and the player will take 2,2 cards      # steps/decktoplayer.py:5 
-    When the dealer gets two cards                                                             # steps/decktoplayer.py:12
-    Then a of these deck should visible to the player                                          # steps/decktoplayer.py:22
-
-  Scenario Outline: Supply two cards and validate the value of the hidden card -- @1.2 values  # decktoplayer.feature:11 
-    Given the player wants to begin a game, the dealer and the player will take 0,2 cards      # steps/decktoplayer.py:5 
-    When the dealer gets two cards                                                             # steps/decktoplayer.py:12
-    Then a of these deck should visible to the player                                          # steps/decktoplayer.py:22
-
-  Scenario Outline: Supply two cards and validate the value of the hidden card -- @1.3 values  # decktoplayer.feature:12 
-    Given the player wants to begin a game, the dealer and the player will take 1,2 cards      # steps/decktoplayer.py:5 
-    When the dealer gets two cards                                                             # steps/decktoplayer.py:12
-    Then a of these deck should visible to the player                                          # steps/decktoplayer.py:22
-
-  Scenario Outline: Supply two cards and validate the value of the hidden card -- @1.4 values  # decktoplayer.feature:13 
-    Given the player wants to begin a game, the dealer and the player will take 2,1 cards      # steps/decktoplayer.py:5 
-    When the dealer gets two cards                                                             # steps/decktoplayer.py:12
-    Then a of these deck should Not visible to the player                                      # steps/decktoplayer.py:22
-
-  Scenario Outline: Supply two cards and validate the value of the hidden card -- @1.5 values  # decktoplayer.feature:14
-    Given the player wants to begin a game, the dealer and the player will take 1,0 cards      # steps/decktoplayer.py:5
-    When the dealer gets two cards                                                             # steps/decktoplayer.py:12
-    Then a of these deck should Not visible to the player                                      # steps/decktoplayer.py:22
-
-  Scenario Outline: Supply two cards and validate the value of the hidden card -- @1.6 values  # decktoplayer.feature:15
-    Given the player wants to begin a game, the dealer and the player will take 0,0 cards      # steps/decktoplayer.py:5
-    When the dealer gets two cards                                                             # steps/decktoplayer.py:12
-    Then a of these deck should Not visible to the player                                      # steps/decktoplayer.py:22
-
-Feature: History 2 # giveCard.feature:1
+Feature: BlackJack # giveCard.feature:1
 
   Scenario Outline: As a dealer I want to define who won the game -- @1.1 values  # giveCard.feature:9
     Given the sum of the players cards is less or more 22                         # steps/giveCard.py:5
