@@ -255,12 +255,3 @@ def test_push():
     assert push(jugadoruno,jugadordos) == "Lo siento, empataron. El repartidor gano!"
 
 
-# def test_hos(monkeypatch):
-#     cartadl = Deck()
-#     prime = Hand()
-#     prime.add_card(cartadl.deal())
-#     prime.add_card(cartadl.deal())
-#     monkeypatch.setattr('builtins.input', lambda _:"p")
-
-#     assert hit_or_stand(cartadl,prime) == None"Tu quieres [S]olicitar carta, [P]lantarte? Ingrese 's' or 'p'"
-#     # assert hit_or_stand(cartadl,prime) == None
