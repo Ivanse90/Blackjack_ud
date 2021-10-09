@@ -431,7 +431,7 @@
 	<TD>1,2</TD> <TD>visible</TD>
 </TR>
 <TR>
-	<TD>2,1</TD> <TD>Not visible></TD>
+	<TD>2,1</TD> <TD>Not visible</TD>
 </TR>
 <TR>
 	<TD>1,0</TD> <TD>Not visible</TD>
