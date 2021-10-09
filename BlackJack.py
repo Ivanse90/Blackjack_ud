@@ -9,7 +9,7 @@ playing = True
 
 #creando class tarjeta#
 
-class Card:
+class Card():
     
     def __init__(self, suit, rank):
         self.suit = suit
@@ -20,19 +20,13 @@ class Card:
 
 #creating , shuffle function and single dealing#
 
-class Deck:
+class Deck():
     
     def __init__(self):
         self.deck = []  # start with an empty list#
         for suit in suits:
             for rank in ranks:
                 self.deck.append(Card(suit, rank))
-    
-    def __str__(self):
-        deck_comp = '' #strating competition deck empty#
-        for card in self.deck:
-            deck_comp += '\n' + card.__str__() #add each card object;s strin#
-        return 'The deck has' + deck_comp
             
     def shuffle(self):
         random.shuffle(self.deck)
@@ -40,6 +34,12 @@ class Deck:
     def deal(self):
         single_card = self.deck.pop()
         return single_card
+
+    def __str__(self):
+        deck_comp = '' #strating competition deck empty#
+        for card in self.deck:
+            deck_comp += '\n' + card.__str__() #add each card object;s strin#
+        return  'El rapartidor tiene' + deck_comp
 
 #creating a hand#
 
@@ -76,7 +76,7 @@ def hit_or_stand(deck,hand):
     
     while True:
         x = input("Tu quieres [S]olicitar carta, [P]lantarte? Ingrese 's' or 'p'")
-        
+
         if x[0].lower() == 's':
             hit(deck,hand)  # hit() function defined above
 
@@ -97,6 +97,7 @@ def show_some(player,dealer):
     print(' ', dealer.cards[1])
     print("\nLa mano del jugador: ", *player.cards, sep= '\n')
     print("El jugador Tiene = ", player.value)
+    return "Jugando!"
 
     
     
@@ -105,94 +106,101 @@ def show_all(player,dealer):
     print("La mano del repartidor =",dealer.value)
     print("\nLa mano del jugador: ", *player.cards, sep= '\n')
     print("La mano del jugador = ", player.value)
+    return "****"
 
     
 
 #functions to handle game scenarios#
 
 def player_busts(player,dealer):
-    print("Lo siento. Te pasaste. Perdiste.\n")
+    return str("Lo siento. Te pasaste. Perdiste.\n")
 
 def player_wins(player,dealer):
-    print("Felicitaciones. Ganaste\n!")
+    return str ("Felicitaciones. Ganaste\n!")
 
 def dealer_busts(player,dealer):
-    print("El repartidor se paso. Tu ganas!\n")
+    return str ("El repartidor se paso. Tu ganas!\n")
     
 def dealer_wins(player,dealer):
-    print("Lo siento, perdiste. El repartidor gano!")
+    return str ("Lo siento, perdiste. El repartidor gano!")
     
 def push(player,dealer):
-    print("Lo siento, empataron. El repartidor gano!") 
+    return str ("Lo siento, empataron. El repartidor gano!") 
 
 #NOW FOR THE GAME
-while True:
-    # Print an opening statement
-    print("Bienvenido a Blackjack U Distrital.")
-    
-    # Create & shuffle the deck, deal two cards to each player
-    deck = Deck()
-    deck.shuffle()
-    
-    player_hand = Hand()
-    player_hand.add_card(deck.deal())
-    player_hand.add_card(deck.deal())
-    
-    dealer_hand = Hand()
-    dealer_hand.add_card(deck.deal())
-    dealer_hand.add_card(deck.deal())
-    
+class game():
+    def star():
+        while True:
+            # Print an opening statement
+            print("Bienvenido a Blackjack U Distrital.")
+            
+            # Create & shuffle the deck, deal two cards to each player
+            deck = Deck()
+            deck.shuffle()
+            
+            player_hand = Hand()
+            player_hand.add_card(deck.deal())
+            player_hand.add_card(deck.deal())
+            
+            dealer_hand = Hand()
+            dealer_hand.add_card(deck.deal())
+            dealer_hand.add_card(deck.deal())
+            
 
-    
-    
-    # Show cards (but keep one dealer card hidden)
-    show_some(player_hand, dealer_hand)
-    
-    while playing:  # recall this variable from our hit_or_stand function
-        
-        # Prompt for Player to Hit or Stand
-        hit_or_stand(deck, player_hand)
-        
-        # Show cards (but keep one dealer card hidden)
-        show_some(player_hand,dealer_hand) 
-        
-        # If player's hand exceeds 21, run player_busts() and break out of loop
-        if player_hand.value >21:
-            player_busts(player_hand, dealer_hand)
+            
+            
+            # Show cards (but keep one dealer card hidden)
+            show_some(player_hand, dealer_hand)
+            
+            while playing:  # recall this variable from our hit_or_stand function
+                
+                # Prompt for Player to Hit or Stand
+                hit_or_stand(deck, player_hand)
+                
+                # Show cards (but keep one dealer card hidden)
+                show_some(player_hand,dealer_hand) 
+                
+                # If player's hand exceeds 21, run player_busts() and break out of loop
+                if player_hand.value >21:
+                    player_busts(player_hand, dealer_hand)
 
-            break
+                    break
 
-    # If Player hasn't busted, play Dealer's hand until Dealer reaches 17
-    if player_hand.value <= 21:
-        
-        while dealer_hand.value <17:
-            hit(deck, dealer_hand)
-    
-        # Show all cards
-        show_all(player_hand,dealer_hand)
-        
-        # Run different winning scenarios
-        if dealer_hand.value > 21:
-            dealer_busts(player_hand,dealer_hand)
+            # If Player hasn't busted, play Dealer's hand until Dealer reaches 17
+            if player_hand.value <= 21:
+                
+                while dealer_hand.value <17:
+                    hit(deck, dealer_hand)
+            
+                # Show all cards
+                show_all(player_hand,dealer_hand)
+                
+                # Run different winning scenarios
+                if dealer_hand.value > 21:
+                    dealer_busts(player_hand,dealer_hand)
 
-        elif dealer_hand.value > player_hand.value:
-            dealer_wins(player_hand,dealer_hand)
+                elif dealer_hand.value > player_hand.value:
+                    dealer_wins(player_hand,dealer_hand)
 
-        elif dealer_hand.value < player_hand.value:
-            player_wins(player_hand,dealer_hand)
+                elif dealer_hand.value < player_hand.value:
+                    player_wins(player_hand,dealer_hand)
 
-        else:
-            push(player_hand,dealer_hand) # Si quedan emptados
-        
-    
+                else:
+                    push(player_hand,dealer_hand) # Si quedan emptados
+                
+            
 
-    
-    # Ask to play again
-    new_game = input("Quieres jugar de nuevo? Ingrese 's' or 'n'")
-    if new_game[0].lower() == 's':
-        playing = True
-        continue
-    else:
-        print('Gracias Por Jugar!!! ')
+            
+            # Ask to play again
+            new_game = input("Quieres jugar de nuevo? Ingrese 's' or 'n'")
+            if new_game[0].lower() == 's':
+                playing = True
+                continue
+            else:
+                print('Gracias Por Jugar!!! ')
 
-        break
+                break
+
+
+##load2
+# game()
